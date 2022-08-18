@@ -28,8 +28,8 @@ const getItem = (req, res) => {
 const createItem = async (req, res) => {
     const {body, file} = req
     const fileData = {
-        filename: file.filename,
-        url: `${PUBLIC_URL}/${file.filename}`
+        url: `${PUBLIC_URL}/${file.filename}`,
+        filename: file.filename
     }
    const data = await storageModel.create(fileData)
     res.send({data})
