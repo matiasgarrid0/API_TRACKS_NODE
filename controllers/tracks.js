@@ -71,7 +71,7 @@ const updateItem = async (req, res) => {
 const deleteItem = async (req, res) => {
   try {
     const { id } = req.params;
-    const data = await tracksModel.findOneAndDelete({ _id: id });
+    const data = await tracksModel.delete({ _id: id });
     res.send({ message: "delete success ↓", data });
   } catch (err) {
     handleHttpError(res, "ERROR_DELETE_ITEM");
